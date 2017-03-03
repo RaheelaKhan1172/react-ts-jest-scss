@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "NODE_ENV=test jest --config .jestrc --no-cache"
+    "test": "NODE_ENV=test jest --config .jestrc --no-cache --updateSnapshot"
   },
   "author": "raheela",
   "license": "ISC",

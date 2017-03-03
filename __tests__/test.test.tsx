@@ -12,14 +12,3 @@ describe("<Form />", () => {
   });
 });
 
-describe("<Form /> onSubmit()", () => {
-  const component = renderer.create(<Form />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  let button = tree.find(".tester");
-  console.log(button); 
-  /*TestUtils.Simulate.click(button);
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot().toBe(false);
-  */
-});
