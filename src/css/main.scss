@@ -1,0 +1,137 @@
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  -ms-transition: $duration ;
+  -o-transition: $duration ;
+  transition: $duration ;
+}
+
+@keyframes buttonclick {
+  0% { background-color:  #37474f ;}
+  90% { background-color: #37474f ;}
+}
+
+body {
+  line-height:1.429;
+  font-weight:400;
+  font-family:'Open Sans Condensed', sans-serif;
+  
+}
+
+#example {
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center; 
+}
+
+.form {
+  width:827px;
+  border-radius:2px;
+  box-shadow: 0 1px 3px rgba(224,224,224,1);
+  height:450px;
+  padding:15px;
+  
+}
+
+.textfield {
+  display:block;
+  position:relative;
+  margin-top:15px;
+  margin-bottom:20px;
+}
+
+.labels {
+  position:absolute;
+  top:-1px;
+  display:block;
+  width:100%;
+  overflow-x:hidden;
+  font-size:14px;
+  font-weight:400;
+  line-height:11px; 
+  white-space:nowrap; 
+  text-overflow:ellipsis;  
+  color:rgba(0,0,0,.54);
+}
+
+.inp,.error {
+  height:42px;
+  display:block;
+  overflow:visible;
+  border:none;
+  width:100%;
+  padding:0;
+  box-sizing:border-box;
+  box-shadow:none;
+  border-radius:0px;
+  outline:none;
+  font-size:18px;
+  line-height:0;
+}
+
+.inp {
+  border-bottom:1px solid rgba(0,0,0,0.26);
+}
+
+.inp:focus {
+  border-bottom-color:#455A64;
+  @include transition(.2s); 
+}
+
+.error {
+  border-bottom:1px solid  #d50000;
+}
+
+.error:active {
+  border-bottom-color: #b71c1c ;
+  @include transition(.2s);
+}
+
+button {
+  background-color:#607D8B;
+  border-bottom-color:#455A64;
+  border-bottom-left-radius:2px;
+  border-bottom-right-radius:2px;
+  border-bottom-style:none;
+  height:36px;
+  vertical-align:middle;
+  text-transform:uppercase;
+  text-align:center;
+  position:relative;
+  padding:0 26px 0 26px;
+  color:#FFFFFF;
+  margin:6px 6px 0 0;
+  line-height:32px;
+  letter-spacing:1px;
+  font-weight:500;
+  font-size:14px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.29);
+  border-color:#BDBDBD; 
+  border-style:none;
+  @include transition(.4);
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  transition-duration:0.4s;
+}
+
+button:after {
+    content: "";
+    background:  #37474f;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+
+}
+
+button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}

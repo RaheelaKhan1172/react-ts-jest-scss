@@ -1,0 +1,12 @@
+{
+  "plugins": ["transform-class-properties","transform-object-rest-spread","transform-react-jsx", "syntax-dynamic-import"],
+  "presets": ["env", "react","es2015"],
+  "plugins": [
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["dynamic-import-node","transform-runtime"]
+    }
+  }
+}
